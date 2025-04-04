@@ -102,17 +102,6 @@ body {
     --letter-delay: var(--letter-delay-hover);
 }
 
-@media (min-width: 720px) {
-    .envelope {
-        --envelope-width: 70rem;
-        --envelope-height: 40rem;
-        --letter-font-size: 1.6rem;
-        --snowman-width: 13rem;
-        --bells-width: 6rem;
-        --front-font-size: 2.2rem;
-    }
-}
-
 .envelope-inner {
     position: relative;
     width: 100%;
@@ -225,7 +214,7 @@ body {
     background: var(--letter-clr-bg);
     z-index: 2;
     border-radius: 0.5rem;
-    padding-block: 3rem 5rem;
+    padding-block: 2rem 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,13 +237,13 @@ body {
     font-weight: bold;
     width: 32ch;
     color: var(--letter-clr-text);
-    font-size: 2.1rem;
+    font-size: 1.2rem;
 }
 .highlight {
     display: block;
     margin-top: 1.5rem;
-    font-size: 1.45rem;
     font-weight: bold;
+    font-size: 1rem;
 }
 .letter__image {
     width: 10rem;
@@ -263,15 +252,43 @@ body {
 }
 .letter-frame {
     position: absolute;
-    bottom: 8rem;
+    bottom: 5rem;
+    width: 32rem;
 }
 .butterflys {
     position: absolute;
     z-index: -1;
-    left: 4.2rem;
     filter: hue-rotate(35deg);
+    width: 28rem;
 }
 .letter__image-2 {
-    width: 18rem;
+    width: 12rem;
     object-fit: contain;
+}
+
+@media (min-width: 720px) {
+    .envelope {
+        --envelope-width: 70rem;
+        --envelope-height: 40rem;
+        --letter-font-size: 1.6rem;
+        --snowman-width: 13rem;
+        --bells-width: 6rem;
+        --front-font-size: 2.2rem;
+    }
+    .letter-frame,
+    .butterflys {
+        width: unset;
+    }
+    .letter .letter-text {
+        font-size: 2.5rem;
+    }
+    .letter .highlight {
+        font-size: 1.45rem;
+    }
+    .butterflys {
+        left: 4.2rem;
+    }
+    .letter__image-2 {
+        width: 17rem;
+    }
 }
